@@ -1,0 +1,198 @@
+/* ================================
+ * Quick Module Updater DZ - Styles
+ * ================================ */
+
+.o_menu_systray {
+  /* Contenedor del widget en el systray */
+  .o_module_updater_systray {
+    /* hace que el item respete el alto de la barra y se alinee */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+
+    /* Botón limpio, sin estilos bootstrap */
+    .o_module_updater_toggle {
+      /* tamaño del “hitbox” como los demás íconos del systray */
+      width: 28px;
+      height: 28px;
+
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      margin: 0;
+      line-height: 1;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+      cursor: pointer;
+
+      /* quitar cualquier pseudo brillo previo */
+      &::before { content: none !important; }
+
+      /* sin efectos al hover/focus/active para no “mover” el icono */
+      &:hover,
+      &:focus,
+      &:active {
+        background: transparent !important;
+        transform: none !important;
+        box-shadow: none !important;
+        outline: none;
+      }
+    }
+
+    /* La imagen del ícono en sí */
+    .o_module_updater_icon_img {
+      width: 18px;     /* similar a otros iconos del systray */
+      height: 18px;
+      object-fit: contain;
+      display: block;
+      background: none !important;
+      border-radius: 0 !important;
+      filter: none;    /* usa el color del PNG tal cual */
+      transition: none;
+    }
+
+    /* Si existiese texto, lo ocultamos */
+    .o_module_updater_text { display: none !important; }
+
+    /* ---------- Dropdown ---------- */
+    .o_module_updater_dropdown {
+      min-width: 420px;
+      border: 1px solid var(--border-color, #d8dadd);
+      border-radius: 6px;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12);
+    }
+
+    .o_module_updater_header {
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color, #d8dadd);
+    }
+
+    /* Elimina logo circular/azul del header */
+    .o_module_updater_logo { display: none !important; }
+
+    /* Buscador */
+    .o_module_updater_search .input-group-text {
+      background: var(--o-input-bg, #fff);
+      border-right: none;
+      border-color: var(--border-color, #d8dadd);
+    }
+    .o_module_updater_search .form-control {
+      border-left: none;
+      border-color: var(--border-color, #d8dadd);
+      padding: 10px;
+    }
+    .o_module_updater_search .form-control:focus {
+      border-color: var(--o-brand-primary, #714b67);
+      box-shadow: 0 0 0 0.2rem rgba(113, 75, 103, 0.12);
+    }
+
+    /* Listas */
+    .o_module_list_container { max-height: 400px; overflow-y: auto; }
+    .o_module_search_results { max-height: 320px; overflow-y: auto; }
+
+    .o_module_result_item {
+      padding: 10px;
+      margin-bottom: 8px;
+      background: var(--o-view-background-color, #fff);
+      border: 1px solid var(--border-color, #d8dadd);
+      border-radius: 6px;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+    .o_module_result_item:hover {
+      background: rgba(113, 75, 103, 0.05);
+      border-color: rgba(113, 75, 103, 0.35);
+    }
+
+    .o_module_favorites_section {
+      border: 1px solid rgba(255, 193, 7, 0.4);
+      border-radius: 6px;
+      padding: 8px;
+      background: rgba(255, 193, 7, 0.06);
+    }
+    .o_module_result_item.favorite {
+      background: rgba(255, 193, 7, 0.06);
+      border-left: 3px solid #e7b416;
+    }
+    .o_module_result_item.favorite:hover {
+      background: rgba(255, 193, 7, 0.1);
+    }
+
+    .favorite-star {
+      text-decoration: none;
+      display: inline-block;
+    }
+    .favorite-star:hover { opacity: 0.8; }
+
+    .o_module_update_btn {
+      background: var(--o-brand-primary, #714b67);
+      border: 1px solid var(--o-brand-primary, #714b67);
+      padding: 5px 12px;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+      font-size: 13px;
+      color: #fff;
+    }
+    .o_module_update_btn:hover {
+      background: var(--o-brand-primary-dark, #624159);
+      border-color: var(--o-brand-primary-dark, #624159);
+    }
+    .o_module_update_btn:active {
+      background: var(--o-brand-primary-dark, #624159);
+      border-color: var(--o-brand-primary-dark, #624159);
+    }
+    .o_module_update_btn:focus {
+      box-shadow: 0 0 0 0.2rem rgba(113, 75, 103, 0.18);
+    }
+    .o_module_update_btn i { font-size: 12px; margin-right: 4px; }
+
+    .o_module_updater_loading .spinner-border {
+      width: 2rem;
+      height: 2rem;
+      border-width: 3px;
+      border-color: var(--o-brand-primary, #714b67);
+      border-right-color: transparent;
+    }
+
+    .o_module_empty_state .o_module_empty_icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(113, 75, 103, 0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .o_module_empty_state .o_module_empty_icon i {
+      font-size: 24px;
+      color: #888;
+    }
+
+    .o_module_no_results {
+      padding: 20px;
+      background: rgba(113, 75, 103, 0.06);
+      border: 1px solid rgba(113, 75, 103, 0.12);
+      border-radius: 6px;
+    }
+    .o_module_no_results i { color: var(--o-brand-primary, #714b67); }
+
+    .o_module_footer_tip {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-color, #d8dadd);
+      text-align: center;
+    }
+    .o_module_footer_tip kbd {
+      background: #333;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 11px;
+    }
+  }
+}
