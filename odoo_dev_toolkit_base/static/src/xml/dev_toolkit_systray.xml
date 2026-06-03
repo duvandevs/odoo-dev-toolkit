@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="odoo_dev_toolkit_base.DevToolkitSystray">
+        <div t-if="state.canUse" class="o_odt_systray o_systray_item dropdown">
+            <button
+                class="btn btn-link dropdown-toggle px-2"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                title="Dev Tools"
+                t-on-click="onDropdownOpen">
+                <span>Dev Tools</span>
+            </button>
+
+            <div class="dropdown-menu dropdown-menu-end p-2" style="min-width: 280px; max-width: 360px;">
+                <div class="px-2 py-1 border-bottom mb-1">
+                    <strong>Dev Tools</strong>
+                </div>
+
+                <div t-if="state.isLoading" class="text-center text-muted py-3">
+                    <span class="spinner-border spinner-border-sm me-1" role="status"/>
+                    <span>Loading...</span>
+                </div>
+
+                <div t-if="!state.isLoading and state.tools.length > 0">
+                    <button
+                        t-foreach="state.tools"
+                        t-as="tool"
+                        t-key="tool.id"
+                        type="button"
+                        class="dropdown-item text-start py-2"
+                        t-on-click="() => openTool(tool.id)">
+                        <div class="fw-semibold text-truncate">
+                            <t t-esc="tool.name"/>
+                        </div>
+                        <div t-if="tool.description" class="small text-muted text-wrap">
+                            <t t-esc="tool.description"/>
+                        </div>
+                        <div t-if="tool.category" class="small text-muted">
+                            <t t-esc="tool.category"/>
+                        </div>
+                    </button>
+                </div>
+
+                <div t-if="!state.isLoading and state.tools.length === 0" class="text-muted px-2 py-3">
+                    No developer tools available
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

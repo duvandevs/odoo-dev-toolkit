@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="odt_tool_category_views" model="odt.tool.category">
+        <field name="name">Views</field>
+        <field name="code">views</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="odt_tool_category_models" model="odt.tool.category">
+        <field name="name">Models</field>
+        <field name="code">models</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="odt_tool_category_imports" model="odt.tool.category">
+        <field name="name">Imports</field>
+        <field name="code">imports</field>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="odt_tool_category_security" model="odt.tool.category">
+        <field name="name">Security</field>
+        <field name="code">security</field>
+        <field name="sequence">40</field>
+    </record>
+
+    <record id="odt_tool_category_reports" model="odt.tool.category">
+        <field name="name">Reports</field>
+        <field name="code">reports</field>
+        <field name="sequence">50</field>
+    </record>
+
+    <record id="odt_tool_category_debug" model="odt.tool.category">
+        <field name="name">Debug</field>
+        <field name="code">debug</field>
+        <field name="sequence">60</field>
+    </record>
+
+    <record id="odt_tool_category_other" model="odt.tool.category">
+        <field name="name">Other</field>
+        <field name="code">other</field>
+        <field name="sequence">99</field>
+    </record>
+</odoo>

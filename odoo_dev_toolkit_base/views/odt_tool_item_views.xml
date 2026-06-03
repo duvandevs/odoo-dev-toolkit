@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_odt_tool_item_tree" model="ir.ui.view">
+        <field name="name">odt.tool.item.tree</field>
+        <field name="model">odt.tool.item</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="technical_name"/>
+                <field name="category_id"/>
+                <field name="module_name"/>
+                <field name="action_xml_id"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_odt_tool_item_form" model="ir.ui.view">
+        <field name="name">odt.tool.item.form</field>
+        <field name="model">odt.tool.item</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="technical_name"/>
+                            <field name="category_id"/>
+                            <field name="module_name"/>
+                        </group>
+                        <group>
+                            <field name="action_xml_id"/>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_odt_tool_item" model="ir.actions.act_window">
+        <field name="name">Registered Tools</field>
+        <field name="res_model">odt.tool.item</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_odt_tool_items"
+        name="Registered Tools"
+        parent="menu_odt_toolkit_root"
+        action="action_odt_tool_item"
+        groups="base.group_system"
+        sequence="20"
+    />
+</odoo>

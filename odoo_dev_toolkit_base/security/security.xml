@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_odoo_dev_toolkit" model="ir.module.category">
+        <field name="name">Odoo Dev Toolkit</field>
+        <field name="sequence">50</field>
+    </record>
+
+    <record id="group_odoo_dev_toolkit_developer" model="res.groups">
+        <field name="name">Developer</field>
+        <field name="category_id" ref="module_category_odoo_dev_toolkit"/>
+    </record>
+</odoo>

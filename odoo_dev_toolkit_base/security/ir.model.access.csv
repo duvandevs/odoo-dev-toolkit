@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_odt_tool_category_developer,odt.tool.category developer,model_odt_tool_category,group_odoo_dev_toolkit_developer,1,0,0,0
+access_odt_tool_item_developer,odt.tool.item developer,model_odt_tool_item,group_odoo_dev_toolkit_developer,1,0,0,0
+access_odt_tool_category_system,odt.tool.category system,model_odt_tool_category,base.group_system,1,1,1,1
+access_odt_tool_item_system,odt.tool.item system,model_odt_tool_item,base.group_system,1,1,1,1

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_odt_tool_category_tree" model="ir.ui.view">
+        <field name="name">odt.tool.category.tree</field>
+        <field name="model">odt.tool.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_odt_tool_category_form" model="ir.ui.view">
+        <field name="name">odt.tool.category.form</field>
+        <field name="model">odt.tool.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_odt_tool_category" model="ir.actions.act_window">
+        <field name="name">Tool Categories</field>
+        <field name="res_model">odt.tool.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_odt_toolkit_root"
+        name="Odoo Dev Toolkit"
+        parent="base.menu_administration"
+        groups="base.group_system"
+        sequence="95"
+    />
+
+    <menuitem
+        id="menu_odt_tool_categories"
+        name="Tool Categories"
+        parent="menu_odt_toolkit_root"
+        action="action_odt_tool_category"
+        groups="base.group_system"
+        sequence="10"
+    />
+</odoo>
