@@ -14,6 +14,14 @@ This toolkit is intended to group small and practical modules that help with tho
 
 ## Modules
 
+### Quick Module Updater
+
+Allows users to quickly update a specific module from anywhere in Odoo, without needing to navigate to the Apps menu and update it manually from there.
+
+This is especially useful when working on PDF report modifications, where developers often need to apply changes and test them quickly.
+
+Status: Done
+
 ### Odoo Import Template Generator
 
 Generates XLSX import templates based on Odoo models and fields.
