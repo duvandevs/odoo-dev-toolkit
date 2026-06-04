@@ -76,5 +76,5 @@ registry.category("systray").add(
     {
         Component: DevToolkitSystray,
     },
-    { sequence: 20 }
+    { sequence: 1000 }
 );
