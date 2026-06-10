@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_odt_view_finder_wizard_form" model="ir.ui.view">
+        <field name="name">odt.view.finder.wizard.form</field>
+        <field name="model">odt.view.finder.wizard</field>
+        <field name="arch" type="xml">
+            <form string="View Finder">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="search_text"/>
+                            <field name="search_mode"/>
+                            <field name="model_id" options="{'no_create': True, 'no_open': True}"/>
+                        </group>
+                        <group>
+                            <field name="view_type"/>
+                            <field name="active_only"/>
+                            <field name="case_sensitive"/>
+                        </group>
+                    </group>
+                    <field name="result_ids" nolabel="1" readonly="1">
+                        <tree string="Results" create="0" edit="0" delete="0">
+                            <button name="action_open_view" type="object" string="Open" class="btn-link"/>
+                            <field name="view_id"/>
+                            <field name="model"/>
+                            <field name="view_type" string="Type"/>
+                            <field name="external_id"/>
+                            <field name="inherit_id"/>
+                            <field name="priority"/>
+                            <field name="active"/>
+                            <field name="match_count" string="Matches"/>
+                            <field name="snippet"/>
+                        </tree>
+                    </field>
+                </sheet>
+                <footer>
+                    <button name="action_search" type="object" string="Search" class="btn-primary"/>
+                    <button name="action_clear_results" type="object" string="Clear Results"/>
+                    <button string="Close" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_odt_view_finder_wizard" model="ir.actions.act_window">
+        <field name="name">View Finder</field>
+        <field name="res_model">odt.view.finder.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_odt_view_finder_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

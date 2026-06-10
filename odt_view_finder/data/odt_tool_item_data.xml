@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="odt_tool_item_view_finder" model="odt.tool.item">
+        <field name="name">View Finder</field>
+        <field name="technical_name">view_finder</field>
+        <field name="description">Search fields, buttons, strings, attributes and XML snippets inside Odoo views.</field>
+        <field name="category_id" ref="odoo_dev_toolkit_base.odt_tool_category_views"/>
+        <field name="module_name">odt_view_finder</field>
+        <field name="action_xml_id">odt_view_finder.action_odt_view_finder_wizard</field>
+        <field name="sequence">10</field>
+        <field name="active">True</field>
+    </record>
+</odoo>

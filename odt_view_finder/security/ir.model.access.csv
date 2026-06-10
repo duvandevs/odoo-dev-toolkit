@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_odt_view_finder_wizard_developer,access.odt.view.finder.wizard.developer,model_odt_view_finder_wizard,odoo_dev_toolkit_base.group_odoo_dev_toolkit_developer,1,1,1,1
+access_odt_view_finder_result_developer,access.odt.view.finder.result.developer,model_odt_view_finder_result,odoo_dev_toolkit_base.group_odoo_dev_toolkit_developer,1,1,1,1
